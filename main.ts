@@ -6,6 +6,9 @@ input.onButtonPressed(Button.A, function () {
     }
     basic.showString("" + (hours))
 })
+input.onGesture(Gesture.ScreenUp, function () {
+    basic.showString("" + hours + (":" + minutes))
+})
 input.onButtonPressed(Button.B, function () {
     if (minutes < 59) {
         minutes += 1
@@ -13,9 +16,6 @@ input.onButtonPressed(Button.B, function () {
         minutes = 0
     }
     basic.showString("" + (minutes))
-})
-input.onGesture(Gesture.Shake, function () {
-    basic.showString("" + hours + (":" + minutes))
 })
 let minutes = 0
 let hours = 0
