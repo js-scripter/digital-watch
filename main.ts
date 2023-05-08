@@ -1,41 +1,113 @@
 function showhour () {
-    if (hours < 10) {
-        basic.showNumber(hours)
-    } else {
-        if (hours == 10) {
-            basic.showLeds(`
-                # . # # #
-                # . # . #
-                # . # . #
-                # . # . #
-                # . # # #
-                `)
-        }
-        if (hours == 11) {
-            basic.showLeds(`
-                # . # . .
-                # . # . .
-                # . # . .
-                # . # . .
-                # . # . .
-                `)
-        }
-        if (hours == 12) {
-            basic.showLeds(`
-                # . # # #
-                # . . . #
-                # . # # #
-                # . # . .
-                # . # # #
-                `)
-        }
+    if (hours == 1) {
+        basic.showLeds(`
+            # . . . .
+            # . . . .
+            # . . . .
+            # . . . .
+            # . . . .
+            `)
+    }
+    if (hours == 2) {
+        basic.showLeds(`
+            # # # . .
+            . . # . .
+            # # # . .
+            # . . . .
+            # # # . .
+            `)
+    }
+    if (hours == 3) {
+        basic.showLeds(`
+            # # # . .
+            . . # . .
+            # # # . .
+            . . # . .
+            # # # . .
+            `)
+    }
+    if (hours == 4) {
+        basic.showLeds(`
+            # . # . .
+            # . # . .
+            # # # . .
+            . . # . .
+            . . # . .
+            `)
+    }
+    if (hours == 5) {
+        basic.showLeds(`
+            # # # . .
+            # . . . .
+            # # # . .
+            . . # . .
+            # # # . .
+            `)
+    }
+    if (hours == 6) {
+        basic.showLeds(`
+            # . . . .
+            # . . . .
+            # # # . .
+            # . # . .
+            # # # . .
+            `)
+    }
+    if (hours == 7) {
+        basic.showLeds(`
+            # # # . .
+            . . # . .
+            . . # . .
+            . . # . .
+            . . # . .
+            `)
+    }
+    if (hours == 8) {
+        basic.showLeds(`
+            # # # . .
+            # . # . .
+            # # # . .
+            # . # . .
+            # # # . .
+            `)
+    }
+    if (hours == 9) {
+        basic.showLeds(`
+            # # # . .
+            # . # . .
+            # # # . .
+            . . # . .
+            . . # . .
+            `)
+    }
+    if (hours == 10) {
+        basic.showLeds(`
+            # . # # #
+            # . # . #
+            # . # . #
+            # . # . #
+            # . # # #
+            `)
+    }
+    if (hours == 11) {
+        basic.showLeds(`
+            # . # . .
+            # . # . .
+            # . # . .
+            # . # . .
+            # . # . .
+            `)
+    }
+    if (hours == 12) {
+        basic.showLeds(`
+            # . # # #
+            # . . . #
+            # . # # #
+            # . # . .
+            # . # # #
+            `)
     }
 }
-input.onButtonPressed(Button.A, function () {
-    showhour()
-    basic.pause(5000)
-    basic.clearScreen()
-})
 input.onButtonPressed(Button.B, function () {
     if (hours < 12) {
         hours += 1
@@ -43,10 +115,10 @@ input.onButtonPressed(Button.B, function () {
         hours = 1
     }
     showhour()
-    basic.clearScreen()
 })
 let hours = 0
 hours = 1
+showhour()
 basic.forever(function () {
     basic.pause(3600000)
     if (hours < 12) {
